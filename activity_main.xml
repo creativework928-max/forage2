@@ -1,0 +1,25 @@
+1. Update Your Layout (activity_main.xml)
+The Accordion component acts as a container for collapsible sections. You will typically wrap it inside a LinearLayout or ConstraintLayout.
+
+2. Implement Accordion Sections in Kotlin
+Unlike a static button, the Accordion requires you to define Sections. Each section needs a title and a content view (like a BpkText or a BpkCard).
+
+Key implementation steps in MainActivity.kt:
+
+Initialize the Accordion: Find the view by its ID.
+
+Create Section Content: Programmatically create the views that will appear when a section expands.
+
+Add Sections: Use the .addSection() method to attach titles and content.
+
+3. Task-Specific Requirements
+Theming: Ensure your styles.xml or themes.xml correctly inherits from BpkTheme. Backpack components will not render their signature Skyscanner styling (colors, fonts, radii) if the theme is missing.
+
+Interactive State: One of the core parts of this task is ensuring the accordion behaves correctly. When one section opens, others should ideally collapse (unless configured otherwise) to save screen space.
+
+Layout Editor: Use the Design tab in Android Studio to drag and drop components, but remember that some Backpack components are best configured in the XML or Code view to ensure all app: attributes are recognized.
+
+Common Troubleshooting
+Render Errors: If the preview doesn't show in Android Studio, check if you are using a compatible version (like Electric Eel or newer) as some older versions have known bugs with Backpack components.
+
+Missing Dependencies: Ensure implementation "net.skyscanner.backpack:backpack-android:XX.X.X" is in your build.gradle file.
